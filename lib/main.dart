@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shoppingcartapp/blocs/home.bloc.dart';
+import 'package:shoppingcartapp/models/category-list-item.model.dart';
+import 'package:shoppingcartapp/ui/shared/widgets/category/category-list.widget.dart';
 
 void main() => runApp(MyApp());
 
@@ -36,14 +38,29 @@ class Main extends StatelessWidget {
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final HomeBloc bloc = Provider.of<HomeBloc>(context);
+
     return Scaffold(
-      body: Container(
-        child: Center(
-          child: Text(
-            "Shopping Cart",
+        body: Padding(
+      padding: EdgeInsets.all(10),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: <Widget>[
+          SizedBox(
+            height: 60,
           ),
-        ),
+          Text(
+            "Categorias",
+            style: Theme.of(context).textTheme.headline,
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          CategoryList(
+            categories: bloc.categories,
+          ),
+        ],
       ),
-    );
+    ));
   }
 }
