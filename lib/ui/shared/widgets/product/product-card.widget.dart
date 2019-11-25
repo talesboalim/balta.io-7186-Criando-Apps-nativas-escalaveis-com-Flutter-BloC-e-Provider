@@ -1,6 +1,8 @@
 import 'package:shoppingcartapp/models/product-list-item.model.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:shoppingcartapp/ui/android/pages/product.page.dart';
+import 'package:shoppingcartapp/ui/shared/widgets/shared/add-to-cart.widget.dart';
 
 class ProductCard extends StatelessWidget {
   final ProductListItemModel item;
@@ -23,18 +25,30 @@ class ProductCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Container(
-            width: 240,
-            height: 240,
-            decoration: BoxDecoration(
-              color: Colors.black.withOpacity(0.05),
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(5),
-                topRight: Radius.circular(5),
-              ),
-              image: DecorationImage(
-                image: NetworkImage(
-                  item.image,
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ProductPage(
+                    id: item.id,
+                  ),
+                ),
+              );
+            },
+            child: Container(
+              width: 240,
+              height: 240,
+              decoration: BoxDecoration(
+                color: Colors.black.withOpacity(0.05),
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(5),
+                  topRight: Radius.circular(5),
+                ),
+                image: DecorationImage(
+                  image: NetworkImage(
+                    item.image,
+                  ),
                 ),
               ),
             ),
@@ -43,7 +57,10 @@ class ProductCard extends StatelessWidget {
             height: 10,
           ),
           Container(
-            padding: EdgeInsets.only(left: 10, right: 10),
+            padding: EdgeInsets.only(
+              left: 10,
+              right: 10,
+            ),
             height: 60,
             child: Text(
               item.title,
@@ -57,7 +74,10 @@ class ProductCard extends StatelessWidget {
             height: 5,
           ),
           Padding(
-            padding: EdgeInsets.only(left: 10, right: 10),
+            padding: EdgeInsets.only(
+              left: 10,
+              right: 10,
+            ),
             child: Text(
               item.brand,
               style: TextStyle(
@@ -85,7 +105,7 @@ class ProductCard extends StatelessWidget {
                     ),
                   ),
                 ),
-                //AddToCart(item: item),
+                AddToCart(item: item),
               ],
             ),
           ),

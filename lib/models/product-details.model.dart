@@ -28,6 +28,7 @@ class ProductDetailsModel {
     description = json['description'];
     brand = json['brand'];
     images = json['images'].cast<String>();
+    category = null;
     category = json['category'] != null
         ? new CategoryModel.fromJson(json['category'])
         : null;
@@ -42,6 +43,7 @@ class ProductDetailsModel {
     data['description'] = this.description;
     data['brand'] = this.brand;
     data['images'] = this.images;
+    data['category'] = null;
     if (this.category != null) {
       data['category'] = this.category.toJson();
     }
