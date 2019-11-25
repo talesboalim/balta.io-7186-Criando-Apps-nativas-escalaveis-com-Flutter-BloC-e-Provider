@@ -31,6 +31,11 @@ class CategoryRepository {
     "tag": "brinquedos"
   },
   {
+    "id": "8",
+    "title": "Telefonia",
+    "tag": "telefonia"
+  },
+  {
     "id": "3",
     "title": "Decoração",
     "tag": "decor"
@@ -55,11 +60,7 @@ class CategoryRepository {
     "title": "Moda",
     "tag": "moda"
   },
-  {
-    "id": "8",
-    "title": "Telefonia",
-    "tag": "telefonia"
-  },
+
   {
     "id":"9",
     "title": "TV",

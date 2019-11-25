@@ -4,6 +4,8 @@ import 'package:shoppingcartapp/blocs/home.bloc.dart';
 import 'package:shoppingcartapp/models/category-list-item.model.dart';
 import 'package:shoppingcartapp/ui/shared/widgets/category/category-list.widget.dart';
 
+import 'ui/shared/widgets/product/product-list.widget.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -59,6 +61,19 @@ class HomePage extends StatelessWidget {
           CategoryList(
             categories: bloc.categories,
           ),
+          SizedBox(
+            height: 20,
+          ),
+          Text(
+            "Mais vendidos",
+            style: Theme.of(context).textTheme.headline,
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          ProductList(
+            products: bloc.products,
+          )
         ],
       ),
     ));

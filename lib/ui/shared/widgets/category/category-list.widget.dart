@@ -1,4 +1,3 @@
-import 'package:flutter/gestures.dart';
 import 'package:shoppingcartapp/models/category-list-item.model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
