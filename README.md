@@ -2,15 +2,9 @@
 
 7186 - Criando Apps nativas escaláveis com Flutter, BloC e Provider
 
-## Getting Started
+## Sobre a aplicação
 
-This project is a starting point for a Flutter application.
+Este projeto foi baseado no curso 7186 do site balta.io e desenvolvido em Flutter.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+A aplicação é um carrinho de compras.
+Os produtos, categorias dos produtos e usuários eram acessados na API ensinada no curso, porém no momento ela está offline. Alterei a codificação para buscar um json dentro da aplicação para permitir a continuação do curso.
